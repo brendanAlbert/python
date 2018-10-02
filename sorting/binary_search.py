@@ -19,7 +19,7 @@ def binary_search(value, list_to_search):
 
     Arguments: value (that we are searching for), list_to_search (the list)
     
-    Return: the value if it is found in the list or -1 if the value is not found.
+    Return: the index of the value if it is found or -1 otherwise.
     """
     
     search_value = -1
@@ -31,7 +31,7 @@ def binary_search(value, list_to_search):
     while max_index >= min_index:
 
         if current_element == value:
-            return current_element
+            return middle_index
 
         elif value > current_element:
             min_index = middle_index + 1
@@ -42,7 +42,7 @@ def binary_search(value, list_to_search):
         middle_index = int(math.floor( (min_index + max_index) / 2))
         current_element = list_to_search[middle_index]
 
-    return search_value
+    return middle_index
 
 
 id_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
